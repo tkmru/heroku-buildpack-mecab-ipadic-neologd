@@ -23,4 +23,10 @@ echo "PATH exported" | indent
 git clone --depth 1 $CLONE_URL | indent
 cd mecab-ipadic-neologd
 
-yes yes | bin/install-mecab-ipadic-neologd -u `whoami` | indent
+yes yes | bin/install-mecab-ipadic-neologd -u `whoami` --ignore_adverb\
+--ignore_interject\
+--ignore_noun_ortho\
+--ignore_noun_sahen_conn_ortho\
+--ignore_adjective_std\
+--ignore_adjective_verb\
+--eliminate-redundant-entry | indent
